@@ -12,7 +12,7 @@ import React from "react";
  * - ! Make sure that there are no errors about the `key` property in the web-console
  */
 const Exercise = () => {
-	return <h1>Exercise 2</h1>;
+  return <h1>Exercise 2</h1>;
 };
 
 export default Exercise;

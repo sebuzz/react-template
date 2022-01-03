@@ -1,0 +1,82 @@
+.Cards {
+  display: grid;
+  gap: 1rem;
+  max-width: 90rem;
+  margin: auto;
+  padding: 2rem 1rem;
+  grid-template-columns: repeat(var(--columns, 1), 1fr);
+}
+
+@media (min-width: 40rem) {
+  .Cards {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 60rem) {
+  .Cards {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 80rem) {
+  .Cards {
+    --columns: 4;
+  }
+}
+
+.Card {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2), 0 12px 18px rgba(0, 0, 0, 0.3);
+}
+
+.CardMedia {
+  display: flex;
+  margin: -1.5rem -1rem 0;
+  padding: 0;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.CardMedia img {
+  width: 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.CardHeadline {
+  font-family: serif;
+}
+
+.CardDescription {
+  font-family: sans-serif;
+}
+
+.CardActions {
+  margin: 1rem -1rem -0.5rem;
+}
+
+.CardActions button {
+  margin: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  border: 0;
+  font-family: inherit;
+  text-transform: uppercase;
+  background: none;
+  border-radius: 2px;
+}
+
+.CardActions button:hover {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.isHidden {
+  display: none;
+}

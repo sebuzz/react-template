@@ -1,0 +1,37 @@
+.card {
+	background-color: mediumaquamarine;
+	width: 80vw;
+}
+.card__wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card_headline {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background-color: hotpink;
+}
+
+.CardDescription {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card__actions {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card__image {
+	width: 100%;
+}
