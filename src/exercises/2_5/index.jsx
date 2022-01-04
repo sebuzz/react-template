@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "../components/Button";
 /**
  * ## Reusable components
  * 1. Make a reusable Button component
@@ -8,7 +8,14 @@ import React from "react";
  * 4. Make a reusable List and ListItem component
  */
 const Exercise = () => {
-	return <h1>Exercise 2.5</h1>;
+	return (
+		<div>
+			<Button className={"irgendwas"} aria-label={"gelb"}>
+				Click me
+			</Button>
+			{/*{React.createElement(Button, { className: "Hallo", "aria-label": "blau" })}*/}
+		</div>
+	);
 };
 
 export default Exercise;

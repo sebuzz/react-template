@@ -1,0 +1,28 @@
+.Typo {
+	font-family: monospace;
+}
+
+.sans {
+	font-family: sans-serif;
+}
+
+.h1 {
+	/*styles h1*/
+	color: purple;
+}
+.h2 {
+	/*styles h2*/
+	color: purple;
+}
+.h3 {
+	/*styles h3*/
+	color: purple;
+}
+.h4 {
+	/*styles h4*/
+	color: purple;
+}
+
+.subtitle1 {
+	color: green;
+}

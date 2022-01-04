@@ -1,6 +1,7 @@
 import React from "react";
-import Card from "../components/card.jsx";
-import styles from "../components/card.module.css";
+import Card from "../components/Card/card.jsx";
+import styles from "../components/Card/card.module.css";
+import Typo from "../components/Typography";
 /**
  * ## Cards
  * 1. Reuse the card from the previous exercise
