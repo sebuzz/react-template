@@ -1,28 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=The+Nautigal&display=swap");
 .Typo {
-	font-family: monospace;
+	font-family: "Noto Sans JP", sans-serif;
 }
 
 .sans {
-	font-family: sans-serif;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: lighter;
+	font-size: 0.8em;
 }
 
 .h1 {
 	/*styles h1*/
-	color: purple;
+	font-size: 3em;
 }
 .h2 {
 	/*styles h2*/
-	color: purple;
+	font-size: 2em;
 }
 .h3 {
 	/*styles h3*/
-	color: purple;
+	font-size: 1.5em;
 }
 .h4 {
 	/*styles h4*/
-	color: purple;
+	font-size: 1.2em;
+}
+.mono {
+	font-family: monospace;
+	font-size: 1em;
 }
 
 .subtitle1 {
-	color: green;
+	font-family: "The Nautigal", cursive;
 }

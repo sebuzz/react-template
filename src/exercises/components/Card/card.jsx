@@ -12,7 +12,7 @@ const Card = ({ headline, description, image }) => {
 				<img src={image.src} alt={image.alt} className={styles.CardImage} />
 			</figure>
 
-			<Typo variant={"h1"} className={styles.CardHeadline}>
+			<Typo variant={"h3"} className={styles.CardHeadline}>
 				{headline}
 			</Typo>
 			{/*<aside className={`${styles.CardDescription} ${hidden ? styles.isHidden : ""}`}>*/}
@@ -31,7 +31,7 @@ const Card = ({ headline, description, image }) => {
 				</Button>
 				{hidden ? (
 					<div className={styles.CardDescription}>
-						<Typo>{description}</Typo>
+						<Typo variant={"p"}>{description}</Typo>
 					</div>
 				) : null}
 			</footer>

@@ -23,6 +23,26 @@ const Typo = ({ children, className, variant, ...props }) => {
 					{children}
 				</h3>
 			);
+		case "h4":
+			return (
+				<h4 {...props} className={[styles.h4, className].join(" ")}>
+					{children}
+				</h4>
+			);
+
+		case "mono":
+			return (
+				<span {...props} className={[styles.mono, className].join(" ")}>
+					{children}
+				</span>
+			);
+
+		case "subtitle1":
+			return (
+				<span {...props} className={[styles.subtitle1, className].join(" ")}>
+					{children}
+				</span>
+			);
 
 		default:
 			return (
