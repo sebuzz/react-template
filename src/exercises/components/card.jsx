@@ -4,12 +4,12 @@ import styles from "./card.module.css";
 const Card = ({ headline, description, image }) => {
 	const [hidden, setHidden] = useState(false); // [Boolean, Function]
 	return (
-		<article className={styles.Cards}>
+		<article className={styles.Card}>
 			<figure className={styles.CardMedia}>
 				<img src={image.src} alt={image.alt} className={styles.CardImage} />
 			</figure>
 
-			<h1 className={styles.CardHeadline}>{headline}</h1>
+			<h3 className={styles.CardHeadline}>{headline}</h3>
 			{/*<aside className={`${styles.CardDescription} ${hidden ? styles.isHidden : ""}`}>*/}
 			{/*	{description}*/}
 			{/*</aside>*/}

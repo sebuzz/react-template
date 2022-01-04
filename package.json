@@ -22,7 +22,7 @@
     "prettier": "^2.5.1",
     "react-scripts": "^5.0.0"
   },
-  "browserslist":  [
+  "browserslist": [
     "last 1 chrome version",
     "last 1 firefox version",
     "last 1 safari version"

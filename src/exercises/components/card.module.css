@@ -1,4 +1,4 @@
-.Cards {
+.CardsGrid {
 	display: grid;
 	gap: 1rem;
 	max-width: 90rem;
@@ -8,23 +8,23 @@
 }
 
 @media (min-width: 30rem) {
-	.Cards {
+	.CardsGrid {
 		--columns: 2;
 	}
 }
 @media (min-width: 40rem) {
-	.Cards {
+	.CardsGrid {
 		--columns: 3;
 	}
 }
 @media (min-width: 70rem) {
-	.Cards {
+	.CardsGrid {
 		--columns: 4;
 	}
 }
-.card {
+.Card {
 	width: 100%;
-	padding: 1.5rem 1rem;
+	/*padding: 0.2rem 0.1rem;*/
 	background-color: whitesmoke;
 	border-radius: 5px;
 	/*width: 100%;*/
@@ -48,9 +48,9 @@
 }
 
 .CardImage {
-	max-width: 90%;
+	max-width: 100%;
 	min-width: 90%;
-	margin-top: 1.5rem;
+	margin-top: 1rem;
 
 	box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 }
