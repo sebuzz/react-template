@@ -1,4 +1,12 @@
 .Button {
-	background-color: red;
-	color: purple;
+	border-radius: 5px;
+	border: whitesmoke;
+	color: silver;
+}
+
+.Button:hover {
+	color: dimgray;
+}
+.Button:active {
+	color: orchid;
 }

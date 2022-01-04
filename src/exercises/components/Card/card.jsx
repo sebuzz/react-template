@@ -25,7 +25,7 @@ const Card = ({ headline, description, image }) => {
 						// console.log("irgendwas");
 						setHidden((state) => !state);
 					}}
-					className={styles.CardButton}
+					// className={styles.CardButton}
 				>
 					{hidden ? "Hide description" : "Show description"}
 				</Button>
