@@ -5,6 +5,7 @@
 	margin: auto;
 	padding: 2rem 1rem;
 	grid-template-columns: repeat(var(--columns, 1), 1fr);
+	background: radial-gradient(circle, #c8c7c8 38%, #a8a7a8 75%);
 }
 
 @media (min-width: 30rem) {
@@ -26,6 +27,7 @@
 	width: 100%;
 	/*padding: 0.2rem 0.1rem;*/
 	background-color: whitesmoke;
+	box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 	/*width: 100%;*/
 }
