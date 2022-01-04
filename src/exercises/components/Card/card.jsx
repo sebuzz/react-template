@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "./card.module.css";
 
+import Button from "../Button";
+import Typo from "../Typography";
+
 const Card = ({ headline, description, image }) => {
 	const [hidden, setHidden] = useState(false); // [Boolean, Function]
 	return (
@@ -9,13 +12,15 @@ const Card = ({ headline, description, image }) => {
 				<img src={image.src} alt={image.alt} className={styles.CardImage} />
 			</figure>
 
-			<h3 className={styles.CardHeadline}>{headline}</h3>
+			<Typo variant={"h1"} className={styles.CardHeadline}>
+				{headline}
+			</Typo>
 			{/*<aside className={`${styles.CardDescription} ${hidden ? styles.isHidden : ""}`}>*/}
 			{/*	{description}*/}
 			{/*</aside>*/}
 
 			<footer className={styles.CardActions}>
-				<button
+				<Button
 					onClick={() => {
 						// console.log("irgendwas");
 						setHidden((state) => !state);
@@ -23,8 +28,12 @@ const Card = ({ headline, description, image }) => {
 					className={styles.CardButton}
 				>
 					{hidden ? "Hide description" : "Show description"}
-				</button>
-				{hidden ? <div className={styles.CardDescription}>{description}</div> : null}
+				</Button>
+				{hidden ? (
+					<div className={styles.CardDescription}>
+						<Typo>{description}</Typo>
+					</div>
+				) : null}
 			</footer>
 		</article>
 	);
