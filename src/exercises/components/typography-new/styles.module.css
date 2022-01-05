@@ -1,0 +1,14 @@
+.Typography {
+	font-family: "Noto Sans JP";
+	/*background: purple;*/
+}
+
+.h3 {
+	color: red;
+	background: yellow;
+	font-size: 0.05em;
+}
+
+.p {
+	font-size: 1em;
+}

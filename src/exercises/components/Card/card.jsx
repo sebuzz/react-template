@@ -3,6 +3,7 @@ import styles from "./card.module.css";
 
 import Button from "../Button";
 import Typo from "../Typography";
+import Typography from "../typography-new";
 
 const Card = ({ headline, description, image }) => {
 	const [hidden, setHidden] = useState(false); // [Boolean, Function]
@@ -12,9 +13,9 @@ const Card = ({ headline, description, image }) => {
 				<img src={image.src} alt={image.alt} className={styles.CardImage} />
 			</figure>
 
-			<Typo variant={"h3"} className={styles.CardHeadline}>
+			<Typography variant={"h3"} component={"h1"} className={styles.CardHeadline}>
 				{headline}
-			</Typo>
+			</Typography>
 			{/*<aside className={`${styles.CardDescription} ${hidden ? styles.isHidden : ""}`}>*/}
 			{/*	{description}*/}
 			{/*</aside>*/}
@@ -31,7 +32,7 @@ const Card = ({ headline, description, image }) => {
 				</Button>
 				{hidden ? (
 					<div className={styles.CardDescription}>
-						<Typo variant={"p"}>{description}</Typo>
+						<Typo variant={"sans"}>{description}</Typo>
 					</div>
 				) : null}
 			</footer>

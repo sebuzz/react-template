@@ -18,6 +18,7 @@ const Typo = ({ children, className, variant, ...props }) => {
 			);
 
 		case "h3":
+			console.log("h3");
 			return (
 				<h3 {...props} className={[styles.h3, className].join(" ")}>
 					{children}
