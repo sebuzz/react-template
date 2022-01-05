@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
+import List from "../components/List/List";
 /**
  * ## Reusable components
  * 1. Make a reusable Button component
@@ -13,7 +14,8 @@ const Exercise = () => {
 			<Button className={"irgendwas"} aria-label={"gelb"}>
 				Click me
 			</Button>
-			{/*{React.createElement(Button, { className: "Hallo", "aria-label": "blau" })}*/}
+
+			<List items={["milk", "sugar", "eggs", "flower"]} />
 		</div>
 	);
 };
