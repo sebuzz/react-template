@@ -13,7 +13,7 @@ const Card = ({ headline, description, image }) => {
 				<img src={image.src} alt={image.alt} className={styles.CardImage} />
 			</figure>
 
-			<Typography variant={"h3"} component={"h1"} className={styles.CardHeadline}>
+			<Typography variant={"h2"} component={"h2"} className={styles.CardHeadline}>
 				{headline}
 			</Typography>
 			{/*<aside className={`${styles.CardDescription} ${hidden ? styles.isHidden : ""}`}>*/}
