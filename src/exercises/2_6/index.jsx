@@ -44,12 +44,20 @@ const HTMLOutput = ({ outerRef }) => {
 const ComponentA = (props) => {
 	return <Code code={props} />;
 };
-
+function foo(a = "goodbye") {
+	console.log(a);
+}
+foo();
+foo("hallo");
 /**
  * This Component uses object destructuring. It only outputs the "rest"
  */
-const ComponentB = ({ foo, bar, ...rest }) => {
-	return <Code code={rest} />;
+
+const ComponentB = ({ foo, bar, name = { first: "Sebastian" }, address, ...rest }) => {
+	console.log(" -->", address?.street?.name ?? "irgendwas", name.first ?? "Alex"); // nullish operator
+	console.log(" -->", address?.street?.name || "irgendwas");
+
+	return <Code code={address?.street} />;
 };
 
 /**
@@ -80,7 +88,7 @@ const ComponentD = ({ color, style = {}, ...rest }) => {
 };
 
 /**
- * This Component picks "color" and "background" and adds it tho the style attribute
+ * This Component picks "color" and "background" and adds it to the style attribute
  * The output only shows the "style" attribute
  */
 const ComponentE = (props) => {
@@ -139,8 +147,10 @@ const Exercise = () => {
 				</a>
 				.
 			</p>
-			<ComponentB foo="foo" bar={`BA${"r".toUpperCase()}`} />
-			<ComponentB age={26} name={{ first: "Max", last: "Harrington" }} />
+			<ComponentB foo="foo" bar={`BA${"ar".toUpperCase()}`} />
+			<ComponentB age={36} name={{ first: "Max", last: "Harrington" }} />
+			<ComponentB age={36} name={{ last: "Harrington" }} />
+			<ComponentB age={36} address={{ street: { name: 0 } }} />
 			<h2>ComponentC</h2>
 			<p>All properties are passed on</p>
 			<ComponentC color="red" foo="foo" bar="bar" />

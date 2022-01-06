@@ -1,7 +1,13 @@
 import React from "react";
 import Button from "../components/Button";
 import List from "../components/List/List";
+
+// const Button = (prop) => {
+// 	return <button>Click Me</button>;
+// };
+
 /**
+ *
  * ## Reusable components
  * 1. Make a reusable Button component
  * 2. Make a reusable Typography component
