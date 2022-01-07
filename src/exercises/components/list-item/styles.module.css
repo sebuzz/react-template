@@ -1,0 +1,8 @@
+.ListItem {
+	padding-left: 1em;
+}
+
+.ListItem::marker {
+	color: var(--marker-color, currentColor);
+	content: var(--marker, normal);
+}
