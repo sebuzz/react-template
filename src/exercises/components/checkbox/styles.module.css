@@ -1,5 +1,25 @@
+.Input {
+	position: fixed;
+	top: 50%;
+	left: -100vw;
+	display: inline;
+}
 .Check {
 	width: 1em;
 	height: 1em;
 	background: red;
+	transition: background-color 1s;
+}
+
+Input:checked + .Check {
+	background: green;
+	transition: background-color 1s;
+}
+
+Input:focus + .Check {
+	box-shadow: 0 0 0 1px hotpink;
+}
+
+.borderC {
+	border: solid 2px orange;
 }

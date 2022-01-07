@@ -4,6 +4,7 @@ import styles from "./card.module.css";
 import Button from "../Button";
 import Typo from "../Typography";
 import Typography from "../typography-new";
+import Checkbox from "../checkbox";
 
 const Card = ({ headline, description, image }) => {
 	const [hidden, setHidden] = useState(false); // [Boolean, Function]
@@ -35,6 +36,7 @@ const Card = ({ headline, description, image }) => {
 						<Typo variant={"sans"}>{description}</Typo>
 					</div>
 				) : null}
+				{/*<Checkbox label={"Hallo"} />*/}
 			</footer>
 		</article>
 	);
