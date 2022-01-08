@@ -4,6 +4,7 @@
 	color: silver;
 	font-family: "Noto Sans JP", sans-serif;
 	font-weight: lighter;
+	min-width: 100px;
 }
 
 .Button:hover {
@@ -13,4 +14,27 @@
 .Button:active {
 	color: orchid;
 	box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pink {
+	background: rgb(244, 0, 212);
+	background: linear-gradient(
+		0deg,
+		rgba(244, 0, 212, 1) 0%,
+		rgba(115, 9, 121, 1) 35%,
+		rgba(245, 0, 255, 0.6941964285714286) 100%
+	);
+	color: white;
+}
+.Button.pink:hover {
+	color: white;
+	box-shadow: 0 6px 6px 4px rgba(0, 0, 0, 0.1);
+}
+.Button.pink:active {
+	color: hotpink;
+	box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.pill {
+	border-radius: 50px;
 }

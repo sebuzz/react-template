@@ -1,8 +1,12 @@
 .List {
 	color: darkslategray;
-	list-style: none;
+	/*list-style: none;*/
 }
 
 .test {
 	color: blue;
+}
+
+.noMarker {
+	list-style: none;
 }

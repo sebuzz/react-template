@@ -5,7 +5,7 @@ const Checkbox = ({ label, ...props }) => {
 	return (
 		<label>
 			<div>{label}</div>
-			<input type={"checkbox"} {...props} className={styles.Input} />
+			<input {...props} type="checkbox" className={styles.Input} />
 			<div className={styles.Check} />
 		</label>
 	);
