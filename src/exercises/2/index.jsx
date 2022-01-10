@@ -19,10 +19,11 @@ const items = Array.from({ length: 5 }, (_, index) => ({
 	headline: "こんにちは",
 	description:
 		"Kyoto (/ˈkjoʊtoʊ/;[3] Japanese: 京都, Kyōto [kʲoꜜːto], officially Kyoto City (京都市, Kyōto-shi, [kʲoːtoꜜɕi] ), is the capital city of Kyoto Prefecture in Japan. Located in the Kansai region on the island of Honshu, Kyoto forms a part of the Keihanshin metropolitan area along with Osaka and Kobe. As of 2021, the city has a population of 1.45 million, making up 57% of the prefecture's total population. The city is the cultural anchor of a substantially larger metropolitan area known as Greater Kyoto, a metropolitan statistical area (MSA) home to a census-estimated 3.8 million people in 2020 and ranking as the second MSA in the Kansai region.",
-	image: {
-		src: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-		alt: "Some random photo of Japan",
-	},
+	// image: {
+	// 	src: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+	// 	alt: "Some random photo of Japan",
+	// },
+	image: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
 }));
 
 const Exercise = () => {

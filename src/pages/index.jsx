@@ -32,6 +32,7 @@ const Home = () => {
 						</div>
 					);
 				})}
+				<Link to={`/card-grid/`}>Card Grid</Link>
 			</nav>
 		</div>
 	);
