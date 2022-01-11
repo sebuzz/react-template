@@ -13,22 +13,23 @@ import React, { useCallback, useEffect, useState } from "react";
 import { v4 } from "uuid";
 import Form from "../../../solutions/components/form";
 
-const CardList = ({ id }) => {
+const CardList = ({ cards, onCreate, id }) => {
 	// State management
 	const [newCard, setNewCard] = useState("");
 	const [newImage, setNewImage] = useState("");
-	const [cards, setCards] = useState([]);
 
-	// Side effects // useEffect() will be called after the DOM was rendered
-	useEffect(() => {
-		const previousCards = JSON.parse(window.localStorage.getItem(id));
-		console.log(previousCards);
-		setCards(previousCards ?? []);
-	}, [id]);
-	// with useCallback() the function below gets memoized so that it only gets re-created when the dependencies change // what exactly are the dependencies here? [] is what?
-	const save = useCallback((cards) => {
-		window.localStorage.setItem(id, JSON.stringify(cards));
-	}, []);
+	// const [cards, setCards] = useState([]);
+
+	// // Side effects // useEffect() will be called after the DOM was rendered
+	// // useEffect(() => {
+	// // 	const previousCards = JSON.parse(window.localStorage.getItem(id));
+	// // 	console.log(previousCards);
+	// // 	setCards(previousCards ?? []);
+	// // }, [id]);
+	// // with useCallback() the function below gets memoized so that it only gets re-created when the dependencies change // what exactly are the dependencies here? [] is what?
+	// const save = useCallback((cards) => {
+	// 	window.localStorage.setItem(id, JSON.stringify(cards));
+	// }, []);
 
 	return (
 		<div>
@@ -47,8 +48,8 @@ const CardList = ({ id }) => {
 						},
 					];
 					console.log("newCards ---> ", newCards); // newCards is now the complete updated cards list
-					setCards(newCards);
-					save(newCards);
+					onCreate(newCards); // was setCards
+					// save(newCards);
 					setNewCard("");
 				}}
 			>
@@ -83,8 +84,8 @@ const CardList = ({ id }) => {
 				<Button
 					onClick={() => {
 						const newCards = cards.filter((item) => !item.isChecked);
-						setCards(newCards);
-						save(newCards);
+						onCreate(newCards);
+						// save(newCards);
 					}}
 				>
 					Clear Checked
@@ -103,8 +104,8 @@ const CardList = ({ id }) => {
 									onClick={() => {
 										const nextState = [...cards];
 										nextState.splice(index, 1);
-										setCards(nextState);
-										save(nextState);
+										onCreate(nextState);
+										// save(nextState);
 									}}
 								>
 									<ClearIcon />
@@ -118,8 +119,8 @@ const CardList = ({ id }) => {
 									const nextState = [...cards];
 									nextState[index].isChecked = !nextState[index].isChecked;
 
-									setCards(nextState);
-									save(nextState);
+									onCreate(nextState);
+									// save(nextState);
 								}}
 							>
 								<ListItemIcon>

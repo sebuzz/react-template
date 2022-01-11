@@ -17,7 +17,7 @@ const items = Array.from({ length: 5 }, (_, index) => ({
 	},
 }));
 
-const myItems = Array.from({ length: 5 }, (_, index) => ({}));
+// const myItems = Array.from({ length: 5 }, (_, index) => ({}));
 
 // const actualCards = ({ id }) => {
 // 	const [myCards, setMyCards] = useState([]);
@@ -27,26 +27,26 @@ const myItems = Array.from({ length: 5 }, (_, index) => ({}));
 // 	}, [id]);
 // };
 
-const CardCreator = ({ id = "cities" }) => {
+const CardCreator = ({ cards }) => {
 	// State management
-	const [newCard, setNewCard] = useState("");
-	const [cards, setCards] = useState([]);
-
-	// Side effects // useEffect() will be called after the DOM was rendered
-	useEffect(() => {
-		const previousCards = JSON.parse(window.localStorage.getItem(id));
-		console.log(previousCards);
-		setCards(previousCards ?? []);
-		console.log("==> =>", cards);
-	}, [id]);
-	// with useCallback() the function below gets memoized so that it only gets re-created when the dependencies change // what exactly are the dependencies here? [] is what?
-	const save = useCallback((cards) => {
-		window.localStorage.setItem(id, JSON.stringify(cards));
-	}, []);
+	// const [newCard, setNewCard] = useState("");
+	// const [cards, setCards] = useState([]);
+	//
+	// // Side effects // useEffect() will be called after the DOM was rendered
+	// useEffect(() => {
+	// 	const previousCards = JSON.parse(window.localStorage.getItem(id));
+	// 	console.log(previousCards);
+	// 	setCards(previousCards ?? []);
+	// 	console.log("==> =>", cards);
+	// }, [id]);
+	// // with useCallback() the function below gets memoized so that it only gets re-created when the dependencies change // what exactly are the dependencies here? [] is what?
+	// const save = useCallback((cards) => {
+	// 	window.localStorage.setItem(id, JSON.stringify(cards));
+	// }, []);
 	return (
 		<div className={styles.CardsGrid}>
 			{console.log("==>", cards)}
-			{cards.map((item, index) => (
+			{cards.map((item) => (
 				<Card
 					key={item.id}
 					headline={item.name}
@@ -59,14 +59,30 @@ const CardCreator = ({ id = "cities" }) => {
 };
 
 const CardGrid = ({ id }) => {
+	const [cards, setCards] = useState([]);
+	// Side effects // useEffect() will be called after the DOM was rendered
+	useEffect(() => {
+		const previousCards = JSON.parse(window.localStorage.getItem(id));
+		console.log(previousCards);
+		setCards(previousCards ?? []);
+		console.log("==> =>", cards);
+	}, [id]);
+	// with useCallback() the function below gets memoized so that it only gets re-created when the dependencies change // what exactly are the dependencies here? [] is what?
+	const save = useCallback((cards) => {
+		window.localStorage.setItem(id, JSON.stringify(cards));
+	}, []);
 	return (
 		<Layout>
 			<Container maxWidth="xs">
-				<CardList id="cities" />
+				<CardList
+					cards={cards}
+					onCreate={(update) => {
+						setCards(update);
+					}}
+				/>
 			</Container>
-
 			{/*<div className={styles.CardsGrid}>*/}
-			<CardCreator id="cities" />
+			<CardCreator cards={cards} /> {/*prop drilling*/}
 			{/*	{console.log("==>", cards)}*/}
 			{/*	{cards.map((item, index) => (*/}
 			{/*		<Card*/}
