@@ -8,12 +8,12 @@ const port = 3025;
 const jason = {
 	Todos: [
 		{
-			name: "Sebastian",
+			name: "Sebastian A....",
 			city: "Hamburg",
 		},
 		{
 			name: "Florian",
-			city: "Frankfurt",
+			city: "Frankfurt am Main",
 		},
 	],
 };
@@ -26,5 +26,5 @@ app.get("/todos/", (request, response) => {
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+	console.log(`Server is listening on port ${port}`);
 });
