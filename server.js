@@ -22,7 +22,8 @@ app.get("/todos/", async (request, response) => {
 app.post("/todos/", async (request, response) => {
 	const data = await readFile(DATABASE_URI, "utf8");
 	const json = JSON.parse(data);
-	console.log(request.body);
+	// console.log("==>", json);
+	// console.log(request.body);
 	const todo = {
 		...request.body,
 		id: uuid(),
@@ -30,9 +31,23 @@ app.post("/todos/", async (request, response) => {
 	json.todos.push(todo);
 	await writeFile(DATABASE_URI, JSON.stringify(json));
 	response.status(201);
+	console.log("added: ", todo);
 	response.json(todo);
 });
 
+app.delete("/todos/", async (request, response) => {
+	const data = await readFile(DATABASE_URI, "utf8");
+	const json = JSON.parse(data);
+	const todo = request.body;
+	// console.log("= = = >", JSON.stringify(json));
+	// TODO: check if requested todo exists before deleting it
+	const newTodos = json.todos.filter((myTodo) => myTodo.name !== request.body.name);
+
+	await writeFile(DATABASE_URI, `{"todos":${JSON.stringify(newTodos)}}`);
+	console.log("deleted ", todo);
+	response.status(200);
+	response.json(newTodos);
+});
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
